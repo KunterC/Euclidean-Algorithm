@@ -1,6 +1,12 @@
-input_number_1 = int(input("Enter a number: ")) #gets the first user input
-input_number_2 = int(input("Enter another number: ")) #gets the second user input
-
+while True:
+    try:
+        input_number_1 = int(input("Enter a number: ")) #gets the first user input and tests if they are integers
+        input_number_2 = int(input("Enter another number: ")) #gets the second user input
+        break #if input is valid it breaks the while loop
+    except ValueError:
+        print("Please enter numbers only.") #prints an error message when the input is not an integer
+        continue #keeps prompting the user for valid input
+    
 def greatest_common_divisor(num_1, num_2):
     if num_1 < 0 or num_2 < 0: 
         return "Please enter positive numbers only." #if any number is negative it returns an error message
