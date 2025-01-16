@@ -1,13 +1,12 @@
-num_1 = 210 #sets 2 variables for 2 numbers
-num_2 = 45
+input_number_1 = int(input("Enter a number: "))
+input_number_2 = int(input("Enter another number: "))
 
-def gcd(num_1, num_2):
+def greatest_common_divisor(num_1, num_2):
     while num_2 != 0: #while the second number is not 0
-        
-        rem = num_1 % num_2 #gets the remainder of two numbers
-        num_1 = num_2 #changes the first number as the second number
-        num_2 = rem #changes the second number as the remainder
-        #repeats process to find the greatest common divisor
-    return num_1
+    
+        num_1, num_2 = num_2, num_1 % num_2 #continuously sets first number as second 
+                                            #and second as the remainder of the two numbers
+    return num_1 #returns first number when second number is 0
 
-print(gcd(num_1, num_2)) #prints the result
+gcd = greatest_common_divisor(input_number_1, input_number_2) #assigns a variable for the gcd.
+print(f"The GCD of {input_number_1} and {input_number_2} is {gcd}.") #prints the result
